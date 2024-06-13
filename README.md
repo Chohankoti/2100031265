@@ -39,9 +39,6 @@ I am a dedicated Web and App Developer with a strong background in API automatio
 | MySQL            |
 | PostgreSQL       |
 
-## Approach
-
-With a passion for technology and a commitment to delivering high-quality solutions, I thrive in collaborative environments where I can contribute my skills to innovate and solve complex problems.
 
 
 
@@ -60,3 +57,8 @@ https://github.com/Chohankoti/2100031265/assets/110148983/69fa4f59-fc01-4dfa-81b
 
 
 
+![p](https://github.com/Chohankoti/2100031265/assets/110148983/60f26f70-215f-4364-a17a-c6d0fc8decd8)
+
+![f](https://github.com/Chohankoti/2100031265/assets/110148983/4e2956c2-df42-46dd-8a0a-4debf7e6be7c)
+
+![r](https://github.com/Chohankoti/2100031265/assets/110148983/77a62e40-2e81-4d22-8d6e-d1338afb639a)
