@@ -16,7 +16,9 @@ https://github.com/Chohankoti/2100031265/assets/110148983/69fa4f59-fc01-4dfa-81b
 
 
 
-# About Me
+
+
+ # About Me
 
 I am a dedicated Web and App Developer with a strong background in API automation testing and automation tools like UiPath. My expertise spans multiple programming languages and frameworks, enabling me to build robust and scalable solutions across various domains.
 
@@ -24,37 +26,59 @@ I am a dedicated Web and App Developer with a strong background in API automatio
 
 ### Programming
 
-- Proficient in Java and Python.
+- **Languages**: 
+  - Java
+  - Python
 
 ### Libraries/Frameworks
 
-- Experienced with:
+- **Frontend**:
   - React
   - React Native
+
+- **Backend**:
   - Django
   - Hibernate
   - Spring
   - Spring Boot
   - Express
   - Node.js
+
+- **Testing**:
   - Pytest
 
 ### Tools/Platforms
 
-- Skilled in using:
-  - GitHub for version control
-  - AWS for cloud services
-  - UiPath for automation
-  - Expo Go for mobile development
-  - Android Studio for Android applications
-  - Postman for API testing
-  - VS Code, Eclipse, PyCharm for IDEs
-  - Figma for design
-  - Swagger for API documentation
+- **Version Control**:
+  - GitHub
+
+- **Cloud Services**:
+  - AWS
+
+- **Automation**:
+  - UiPath
+
+- **Mobile Development**:
+  - Expo Go
+  - Android Studio
+
+- **API Testing**:
+  - Postman
+
+- **IDEs**:
+  - VS Code
+  - Eclipse
+  - PyCharm
+
+- **Design**:
+  - Figma
+
+- **API Documentation**:
+  - Swagger
 
 ### Databases
 
-- Familiar with:
+- **SQL Databases**:
   - MySQL
   - PostgreSQL
 
