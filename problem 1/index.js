@@ -5,21 +5,13 @@ const app = express();
 const PORT = 3000;
 
 const BASE_URL = 'http://20.244.56.144/test/';
-
-const SERVER_URLS = {
-    'p': 'primes',
-    'f': 'fibo',
-    'e': 'even',
-    'r': 'rand'
-};
-
 const MAX_WINDOW_SIZE = 10;
 
 const dataWindows = {
-    'p': [],
-    'f': [],
-    'e': [],
-    'r': []
+    'primes': [],
+    'fibo': [],
+    'even': [],
+    'rand': []
 };
 
 let BEARER_TOKEN = null;
@@ -54,15 +46,18 @@ async function fetchBearerToken() {
 
 app.use(express.json());
 
-app.get('/numbers/:numberid', async (req, res) => {
-    const numberid = req.params.numberid;
 
-    if (!(numberid in SERVER_URLS)) {
+app.get('/numbers/:numberType', async (req, res) => {
+    const numberType = req.params.numberType;
+
+    const validTypes = ['primes', 'fibo', 'even', 'rand'];
+
+    if (!validTypes.includes(numberType)) {
         return res.status(400).json({ error: 'Invalid number type' });
     }
 
     const start_time = Date.now();
-    const url = BASE_URL + SERVER_URLS[numberid];
+    const url = BASE_URL + numberType;
 
     try {
         const headers = {
@@ -80,27 +75,27 @@ app.get('/numbers/:numberid', async (req, res) => {
         }
 
         const json = await response.json();
-        const fetched_numbers = json.numbers || [];
+        const fetchedNumbers = json.numbers || [];
 
-        dataWindows[numberid] = dataWindows[numberid].concat(fetched_numbers).slice(-MAX_WINDOW_SIZE);
+        dataWindows[numberType] = dataWindows[numberType].concat(fetchedNumbers).slice(MAX_WINDOW_SIZE);
 
-        const prev_window_state = dataWindows[numberid].slice(0, -fetched_numbers.length);
-        const curr_window_state = dataWindows[numberid];
-        const avg = curr_window_state.length > 0 ? curr_window_state.reduce((a, b) => a + b, 0) / curr_window_state.length : 0;
+        const prevWindowState = dataWindows[numberType].slice(0, fetchedNumbers.length);
+        const currWindowState = dataWindows[numberType];
+        const avg = currWindowState.length > 0 ? currWindowState.reduce((a, b) => a + b, 0) / currWindowState.length : 0;
 
-        const response_data = {
-            numbers: fetched_numbers,
-            windowPrevState: prev_window_state,
-            windowCurrState: curr_window_state,
+        const responseData = {
+            numbers: fetchedNumbers,
+            windowPrevState: prevWindowState,
+            windowCurrState: currWindowState,
             avg: avg
         };
 
-        const elapsed_time = Date.now() - start_time;
-        if (elapsed_time > 500) {
+        const elapsedTime = Date.now() - start_time;
+        if (elapsedTime > 500) {
             return res.status(500).json({ error: 'Response time exceeded 500 ms' });
         }
 
-        res.json(response_data);
+        res.json(responseData);
     } catch (error) {
         console.error('Error processing request:', error);
         res.status(500).json({ error: 'Internal server error' });
