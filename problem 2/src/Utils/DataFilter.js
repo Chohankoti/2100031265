@@ -1,9 +1,19 @@
-import { SNP, MYN } from './data'; // Assuming 'CompanyData.js' contains SNP and MYN arrays
+// useEffect(() => {
+//     fetchData(selectedCompany, selectedCategory, minPrice, maxPrice)
+//       .then((data) => {
+//         setProducts(data || []);
+//       })
+//       .catch((error) => {
+//         console.error('Error fetching products:', error);
+//       });
+//   }, [selectedCompany, selectedCategory, minPrice, maxPrice]);
+
+
+import { SNP, MYN } from './data'; 
 
 async function fetchData(company, category, minPrice, maxPrice) {
   let companyData = [];
 
-  // Select the appropriate company data based on the 'company' parameter
   if (company === 'SNP') {
     companyData = SNP;
   } else if (company === 'MYN') {
@@ -13,9 +23,7 @@ async function fetchData(company, category, minPrice, maxPrice) {
     return [];
   }
 
-  // Filter products based on minPrice, maxPrice, and category in productName
   const filteredProducts = companyData.filter(product => {
-    // Extract category from productName (assuming category is before the first space)
     const productNameParts = product.productName.split(' ');
     const productCategory = productNameParts[0];
 
@@ -26,7 +34,6 @@ async function fetchData(company, category, minPrice, maxPrice) {
     );
   });
 
-  // Assuming you want to limit the results to top 10 products
   const topProducts = filteredProducts.slice(0, 10);
 
   return topProducts;

@@ -10,31 +10,21 @@ export default function List() {
   const [maxPrice, setMaxPrice] = useState(90000);
   const [selectedCompany, setSelectedCompany] = useState('SNP');
   const [selectedCategory, setSelectedCategory] = useState('Phone');
-  const [products, setProducts] = useState(SNP);
+  const [products, setProducts] = useState([]);
 
-//   useEffect(() => {
-//     const fetchDataFromAPI = async () => {
-//       if (selectedCompany && selectedCategory) {
-//         const data = await fetchData(selectedCompany, selectedCategory, minPrice, maxPrice);
-//         if (data) {
-//           setProducts(data);
-//         } else {
-//           setProducts([]);
-//         }
-//       }
-//     };
+  useEffect(() => {
+    const fetchDataFromAPI = async () => {
+      if (selectedCompany && selectedCategory) {
+        const data = await fetchData(selectedCompany, selectedCategory, minPrice, maxPrice);
+        if (data) {
+          setProducts(data);
+        } else {
+          setProducts([]);
+        }
+      }
+    };
 
-//     fetchDataFromAPI();
-//   }, [selectedCompany, selectedCategory, minPrice, maxPrice]);
-
-useEffect(() => {
-    fetchData(selectedCompany, selectedCategory, minPrice, maxPrice)
-      .then((data) => {
-        setProducts(data || []);
-      })
-      .catch((error) => {
-        console.error('Error fetching products:', error);
-      });
+    fetchDataFromAPI();
   }, [selectedCompany, selectedCategory, minPrice, maxPrice]);
 
 
