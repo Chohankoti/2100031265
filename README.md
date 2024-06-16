@@ -19,7 +19,7 @@ I am a dedicated Web and App Developer with a strong background in API automatio
 |------------------|------------------|-----------|
 | React            | Django           | Pytest    |
 | React Native     | Hibernate        |           |
-|                  | Spring           |           |
+| Java Script      | Spring           |           |
 |                  | Spring Boot      |           |
 |                  | Express          |           |
 |                  | Node.js          |           |
