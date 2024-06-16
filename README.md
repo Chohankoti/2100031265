@@ -53,7 +53,7 @@ https://github.com/Chohankoti/2100031265/assets/110148983/69fa4f59-fc01-4dfa-81b
 
 ## Task1
 
-- Done with using Django
+- Done with using Node js
 
 
 
